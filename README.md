@@ -50,45 +50,45 @@ como tecnologías.
 
 ### HTML y CSS
 
-- [ ] Uso de HTML semántico.
-- [ ] Uso de selectores de CSS.
-- [ ] Construir tu aplicación respetando el diseño realizado (maquetación).
+- [x] Uso de HTML semántico.
+- [x] Uso de selectores de CSS.
+- [x] Construir tu aplicación respetando el diseño realizado (maquetación).
 
 ### DOM
 
-- [ ] Uso de selectores del DOM.
-- [ ] Manejo de eventos del DOM.
-- [ ] Manipulación dinámica del DOM
+- [x] Uso de selectores del DOM.
+- [x] Manejo de eventos del DOM.
+- [x] Manipulación dinámica del DOM
       (appendChild |createElement | createTextNode| innerHTML | textContent | etc.)
 
 ### JavaScript
 
-- [ ] Manipulación de strings.
-- [ ] Uso de condicionales (if-else | switch | operador ternario)
-- [ ] Uso de bucles (for | for..in | for..of | while)
-- [ ] Uso de funciones (parámetros | argumentos | valor de retorno)
-- [ ] Declaración correcta de variables (const & let)
+- [x] Manipulación de strings.
+- [x] Uso de condicionales (if-else | switch | operador ternario)
+- [x] Uso de bucles (for | for..in | for..of | while)
+- [x] Uso de funciones (parámetros | argumentos | valor de retorno)
+- [x] Declaración correcta de variables (const & let)
 
 ### Testing
 
-- [ ] Testeo unitario.
+- [x] Testeo unitario.
 
 ### Estructura del código y guía de estilo
 
-- [ ] Organizar y dividir el código en módulos (Modularización)
-- [ ] Uso de identificadores descriptivos (Nomenclatura | Semántica)
-- [ ] Uso de linter (ESLINT)
+- [x] Organizar y dividir el código en módulos (Modularización)
+- [] Uso de identificadores descriptivos (Nomenclatura | Semántica)
+- [x] Uso de linter (ESLINT)
 
 ### Git y GitHub
 
-- [ ] Uso de comandos de git (add | commit | pull | status | push)
-- [ ] Manejo de repositorios de GitHub (clone | fork | gh-pages)
+- [x] Uso de comandos de git (add | commit | pull | status | push)
+- [x] Manejo de repositorios de GitHub (clone | fork | gh-pages)
 
 ### UX
 
-- [ ] Diseñar la aplicación pensando y entendiendo al usuario.
-- [ ] Crear prototipos para obtener feedback e iterar.
-- [ ] Aplicar los principios de diseño visual (contraste, alineación, jerarquía)
+- [x] Diseñar la aplicación pensando y entendiendo al usuario.
+- [x] Crear prototipos para obtener feedback e iterar.
+- [x] Aplicar los principios de diseño visual (contraste, alineación, jerarquía)
 
 # Checklist
 
