@@ -32,7 +32,8 @@ body {
 
 header.header-principal h1 {
   font-family: var(--fontTitle);
-  font-size: 3rem;
+  font-size: 2.8rem;
+  margin: 0;
 }
 
 header.header-principal img {
