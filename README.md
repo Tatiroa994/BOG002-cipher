@@ -2,7 +2,7 @@
 
 ## ¿Quiénes son los principales usuarios de producto?
 
-Mujeres que quieren enviar mensajes ocultos entre amigas de todas las edades
+Cualquier persona que quiera compartir secretos con sus amigos y amigas
 
 ## ¿Cuáles son los objetivos de estos usuarios en relación con tu producto?
 
@@ -12,17 +12,13 @@ Encriptar mensajes atraves de la app que estamos creando para enviarlos por sus 
 
 Por que se esta facilitando la comunicacion entre mujeres en un lenguaje cifrado que solo ellas entenderan
 
-## Descripcion
-Secretos de  amigas nace de la nacesidad de mantener privada cierta informacion, si desea  comunicar por whatsapp, se  reaalizaron varios porototipos en papel hasta  llegar el  prototipo final, para el  diseño y eleccion de colores se eligieron basados en la preferencia del usuario  final
+## Vistas, desktop - mobile
+<img src="src/img/view.svg" width="500px"    height="300px">
 
-<img src="src/imagen/prototipo.jpg" width="300px"    height="300px">
+## Vistas, desktop - mobile
+Deplegue gh-pages
 
-prototipo final
-
-<img src="src/imagen/secreto_de_amigas.jpg" width="300px"    height="200px">
-
-Producto final
-
+https://tatiroa994.github.io/BOG002-cipher/
 ***************************************
 # Retro spint 1
 
