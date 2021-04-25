@@ -35,13 +35,13 @@ const listCountries = () => {
   containerListCountry.appendChild(dataListCountries);
 };
 
-const sendWhatapp = () => {
+const sendWhatapp = (message) => {
   containerBtnModal.innerHTML = "";
   const btnWhatsapp = document.createElement("button");
   btnWhatsapp.classList.add("btn-whatsapp");
   containerBtnModal.appendChild(btnWhatsapp);
   btnWhatsapp.addEventListener("click", function () {
-    window.open("https://wa.me/" + parseInt(targetCel.value) + "?text=" + "");
+    window.open("https://wa.me/" + parseInt(targetCel.value) + "?text=" + message);
   });
 };
 
@@ -72,7 +72,7 @@ botonEncode.addEventListener("click", function () {
   try {
     const messageEncode = cipher.encode(parseInt(offset.value), message.value);
     showMessage(title, messageEncode);
-    sendWhatapp();
+    sendWhatapp(messageEncode);
   } catch (error) {
     printToatsNotification(error.message);
     modalMontainer.classList.remove("show");
@@ -86,7 +86,7 @@ botonDecode.addEventListener("click", function () {
   try {
     const messageDecode = cipher.encode(parseInt(offset.value), message.value);
     showMessage(title, messageDecode);
-    sendWhatapp();
+    sendWhatapp(messageDecode);
   } catch (error) {
     printToatsNotification(error.message);
     modalMontainer.classList.remove("show");
