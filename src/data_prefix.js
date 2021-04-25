@@ -104,25 +104,6 @@ export const countries = [
     prefix: "55",
   },
   {
-    country: "0015 = Vivo",
-  },
-  {
-    country: "0021 = Claro",
-  },
-  {
-    country: "0025 = GVT",
-  },
-  {
-    country: "0031 = Oi",
-  },
-  {
-    country: "0041 = TIM",
-  },
-  {
-    country: "0012 = CTBC",
-    prefix: "0",
-  },
-  {
     country: "Brunéi",
     prefix: "673",
   },
@@ -151,13 +132,6 @@ export const countries = [
     prefix: "855",
   },
   {
-    country: "7",
-  },
-  {
-    country: "8",
-    prefix: "0",
-  },
-  {
     country: "Camerún",
     prefix: "237",
   },
@@ -182,22 +156,6 @@ export const countries = [
     prefix: "56",
   },
   {
-    country: "1220 = Manquehue",
-  },
-  {
-    country: "1230 = Entel",
-  },
-  {
-    country: "1690 = Netline",
-  },
-  {
-    country: "1710 = Claro",
-  },
-  {
-    country: "1810 = Movistar",
-    prefix: "nada",
-  },
-  {
     country: "China",
     prefix: "86",
   },
@@ -208,49 +166,6 @@ export const countries = [
   {
     country: "Colombia",
     prefix: "57",
-  },
-  {
-    country: "005 = UNE EPM",
-  },
-  {
-    country: "007 = ETB",
-  },
-  {
-    country: "009 = Movistar",
-  },
-  {
-    country: "00414 = Tigo",
-  },
-  {
-    country: "00444 = Claro Móvil",
-  },
-  {
-    country: "00456 = Claro fijos",
-  },
-  {
-    country: "00468 = Avantel",
-    prefix: "03 = Móviles",
-  },
-  {
-    country: "05 = UNE EPM",
-  },
-  {
-    country: "07 = ETB",
-  },
-  {
-    country: "09 = Movistar",
-  },
-  {
-    country: "0414 = Tigo",
-  },
-  {
-    country: "0444 = Claro Móvil",
-  },
-  {
-    country: "0456 = Claro fijos",
-  },
-  {
-    country: "0468 = Avantel",
   },
   {
     country: "Comoras",
@@ -265,16 +180,8 @@ export const countries = [
     prefix: "82",
   },
   {
-    country: "2",
-    prefix: "0",
-  },
-  {
     country: "Corea del Norte",
     prefix: "850",
-  },
-  {
-    country: "99",
-    prefix: "0",
   },
   {
     country: "Costa de Marfil",
@@ -359,16 +266,6 @@ export const countries = [
   {
     country: "Finlandia",
     prefix: "358",
-  },
-  {
-    country: "990",
-  },
-  {
-    country: "994",
-  },
-  {
-    country: "999",
-    prefix: "0",
   },
   {
     country: "Fiyi",
@@ -475,16 +372,6 @@ export const countries = [
     prefix: "62",
   },
   {
-    country: "007 = Telkom",
-  },
-  {
-    country: "008 = Indosat",
-  },
-  {
-    country: "009 = Bakrie Telecom",
-    prefix: "0",
-  },
-  {
     country: "Inglaterra",
     prefix: "44",
   },
@@ -559,19 +446,6 @@ export const countries = [
   {
     country: "Israel",
     prefix: "972",
-  },
-  {
-    country: "12",
-  },
-  {
-    country: "13",
-  },
-  {
-    country: "14",
-  },
-  {
-    country: "18",
-    prefix: "0",
   },
   {
     country: "Italia",
@@ -698,7 +572,7 @@ export const countries = [
     prefix: "262",
   },
   {
-    country: "México",
+    country: "Mexico",
     prefix: "52",
   },
   {
@@ -710,15 +584,12 @@ export const countries = [
     prefix: "373",
   },
   {
-    country: "Mónaco",
+    country: "Monaco",
     prefix: "377",
   },
   {
     country: "Mongolia",
     prefix: "976",
-  },
-  {
-    country: "2",
   },
   {
     country: "Montenegro",
@@ -787,10 +658,6 @@ export const countries = [
   {
     country: "Palaos",
     prefix: "680",
-  },
-  {
-    country: "12",
-    prefix: "nada",
   },
   {
     country: "Palestina",
@@ -917,10 +784,6 @@ export const countries = [
     prefix: "8816",
   },
   {
-    country: "8817",
-    prefix: "0",
-  },
-  {
     country: "Satélite Thuraya",
     prefix: "882 16",
   },
@@ -943,10 +806,6 @@ export const countries = [
   {
     country: "Singapur",
     prefix: "65",
-  },
-  {
-    country: "8",
-    prefix: "nada",
   },
   {
     country: "Sint Maarten",

@@ -1,73 +1,67 @@
 const cipher = {
   //  decifrar
-  decode: function (offsetGuardado, mensajeGuardado) {
-    let formula; //declaro  variable  para aplicar  la  formula  cifrado
-    let resultado = ""; //declaro  donde se  va  a guardar la cadena  concatenada
-    if (!offsetGuardado && !mensajeGuardado) {
-        throw new TypeError("INGRESE CLAVE Y MENSAJE"); 
-    }
-    if (!offsetGuardado) {
-      throw new TypeError("INGRESE CLAVE"); 
-    }
-    if (!mensajeGuardado) {
-      throw new TypeError("INGRESE MENSAJE");
-    }
-    else{
-    for (let i = 0; i < mensajeGuardado.length; i++) {
-      // recorremos la cadena de caracteres
-      let mensajeAscci = mensajeGuardado.charCodeAt(i); //convertimos en  ascii
-      if (mensajeAscci >= 65 && mensajeAscci <= 90) {
-        formula = ((mensajeAscci - 65 - offsetGuardado) % 26) + 65;
-        if (formula < 65) {
-          //si  el  numero ascci  es  menor a 65
-          formula = formula + 26; // se le suma 26 que es la cantidad  de  letras del alfabeto
-        }
-      } else if (mensajeAscci >= 97 && mensajeAscci <= 122) {
-        formula = ((mensajeAscci - 97 - offsetGuardado) % 26) + 97;
-        if (formula < 97) {
-          //si  el  numero ascci  es  menor a 97
-          formula = formula + 26;
-        } // se le suma 26 que es la cantidad  de  letras del alfabeto
-      } else formula = mensajeAscci;
-      let mensajeFinal = String.fromCharCode(formula); //convertir de ascii  a caracter
-      resultado += mensajeFinal;
-    }
-        return resultado;
-  }},
-
-  //cifrar
-  encode: function (offsetGuardado, mensajeGuardado) {
-    let formula; //declaro  variable  para aplicar  la  formula  cifrado
-    let resultado = "";
-    if (!offsetGuardado && !mensajeGuardado) {
+  decode: function (offset, message) {
+    let newAscci;
+    let newMessage = "";
+    if (!offset && !message) {
       throw new TypeError("INGRESE CLAVE Y MENSAJE");
     }
-    if (!offsetGuardado) {
-      throw new TypeError("INGRESE CLAVE"); 
+    if (!offset) {
+      throw new TypeError("INGRESE CLAVE");
     }
-    if (!mensajeGuardado) {
+    if (!message) {
       throw new TypeError("INGRESE MENSAJE");
-    }
-    else{
-    for (let i = 0; i < mensajeGuardado.length; i++) {
-      let mensajeAscci = mensajeGuardado.charCodeAt(i); //convertimos en  ascii 65,67,68,32,97,98,99
-      if (mensajeAscci >= 65 && mensajeAscci <= 90) {
-        formula = ((mensajeAscci - 65 + offsetGuardado) % 26) + 65;
-        if(formula <65){
-        formula= formula+26; 
+    } else {
+      for (let i = 0; i < message.length; i++) {
+        let menssageAscci = message.charCodeAt(i);
+        if (menssageAscci >= 65 && menssageAscci <= 90) {
+          newAscci = ((menssageAscci - 65 - offset) % 26) + 65;
+          if (newAscci < 65) {
+            newAscci = newAscci + 26;
+          }
+        } else if (menssageAscci >= 97 && menssageAscci <= 122) {
+          newAscci = ((menssageAscci - 97 - offset) % 26) + 97;
+          if (newAscci < 97) {
+            newAscci = newAscci + 26;
+          }
+        } else newAscci = menssageAscci;
+        newMessage += String.fromCharCode(newAscci);
       }
-      } else if (mensajeAscci >= 97 && mensajeAscci <= 122) {
-        formula = ((mensajeAscci - 97 + offsetGuardado) % 26) + 97;
-        if(formula <97){
-          formula= formula+26; 
-        }
-      } else formula = mensajeAscci;
-
-      let mensajeFinal = String.fromCharCode(formula); //convertir de ascii  a caracter
-      resultado += mensajeFinal;
+      return newMessage;
     }
-        return resultado;
-  }},
+  },
+
+  //cifrar
+  encode: function (offset, message) {
+    let newAscci;
+    let newMessage = "";
+    if (!offset && !message) {
+      throw new TypeError("INGRESE CLAVE Y MENSAJE");
+    }
+    if (!offset) {
+      throw new TypeError("INGRESE CLAVE");
+    }
+    if (!message) {
+      throw new TypeError("INGRESE MENSAJE");
+    } else {
+      for (let i = 0; i < message.length; i++) {
+        let menssageAscci = message.charCodeAt(i);
+        if (menssageAscci >= 65 && menssageAscci <= 90) {
+          newAscci = ((menssageAscci - 65 + offset) % 26) + 65;
+          if (newAscci < 65) {
+            newAscci = newAscci + 26;
+          }
+        } else if (menssageAscci >= 97 && menssageAscci <= 122) {
+          newAscci = ((menssageAscci - 97 + offset) % 26) + 97;
+          if (newAscci < 97) {
+            newAscci = newAscci + 26;
+          }
+        } else newAscci = menssageAscci;
+        newMessage += String.fromCharCode(newAscci);
+      }
+      return newMessage;
+    }
+  },
 };
 
 export default cipher;

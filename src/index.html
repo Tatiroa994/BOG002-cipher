@@ -1,99 +1,54 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secretos</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header class="header-principal">
-      <img src="imagen/logo_secretos.svg" />
-      <h1>SECRETOS</h1>
-    </header>
-    <main class="main-container">
-      <img src="imagen/img_secretos.svg" class="img-secretos" />
-      <section class="principal-section">
-        <h1>Bienvenidos</h1>
-        <p>Para que tus secretos sean secretos de verdad...</p>
-        <select name="select">
-          <option value="value1" selected>Value 1</option>
-        </select>
-        <label>Tel de destino</label>
-        <input
-          type="number"
-          placeholder=" tel destino"
-          id="destino"
-          class="input"
-        />
-        <label>Clave</label>
-        <input
-          type="number"
-          placeholder=" ingresar clave"
-          id="offset"
-          class="input"
-        />
-        <label>Mensaje</label>
-        <textarea
-          name="mensaje"
-          rows="10"
-          cols="40"
-          placeholder="Escribe  tu  mensaje"
-          id="mensaje"
-        ></textarea>
-        <div class="container-btn">
-          <button id="button_encode">CIFRAR</button>
-          <button id="button_decode">DESCIFRAR</button>
-        </div>       
-      </section>
-      </main>
-     <footer class="container-btn-info">
-        <button class="btn-info"><img src="imagen/info_icon.svg"></button>
-        <button type="boton" onclick="location.reload()" class="btn-reset">
-          <img src="imagen/restart_icon.svg">
-        </button>
-     </footer>
-    <section>
-      <div id="modal_container" class="modal-container">
-        <div class="modal">
-          <p id="modal"></p>
-          <button id="cerrar"></button>
-            <img src="imagen/cerrar.png" width="50px" height="50px" />
-          </button>
-          <button type="submit" id="enviar">
-            <img src="imagen/logog.png" width="50px" height="50px" />
-          </button>
-        </div>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secretos</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header class="header-principal">
+    <img src="img/logo_secretos.svg" />
+    <h1>SECRETOS</h1>
+  </header>
+  <main class="main-container">
+    <img src="img/img_secretos.svg" class="img-secretos" />
+    <section class="principal-section">
+      <h1>Bienvenidos</h1>
+      <p>Para que tus secretos sean secretos de verdad...</p>
+      <label>Celular de destino</label>
+      <div id="container-countries">
+        <input list="countries" name="country" id="input-country" placeholder="Elige el pais" autofocus>
+        <input type="number" placeholder=" tel destino" id="destino" class="input-cel" />
+      </div>
+      <label>Clave</label>
+      <input type="number" placeholder=" ingresar clave" id="offset" required />
+      <label>Mensaje</label>
+      <textarea name="message" rows="10" cols="40" placeholder="Escribe  tu  mensaje" id="message" required></textarea>
+      <div class="container-btn">
+        <button id="button_encode">CIFRAR</button>
+        <button id="button_decode">DESCIFRAR</button>
       </div>
     </section>
-
+  </main>
+  <footer class="container-btn-info-reset">
+    <button class="btn-info"></button>
+    <button type="boton" onclick="location.reload()" class="btn-reset"></button>
+  </footer>
+  <notification-toast id="notification" class="error"><img src="./img/errorIcon.svg" slot="image"><span
+      slot="title">ERROR</span></notification-toast>
+    <div id="modal_container" class="modal-container">
+      <div class="modal">
+        <div id="modal" class="Content-modal"></div>
+        <div class="container-btn-modal">
+          <div class="btn-modal-whatsapp"></div>
+          <button id="close-modal" class="btn-close-modal"> </button>
+        </div>
+      </div>
+    </div>
     <script src="index.js" type="module"></script>
-  </body>
+    </body>
 </html>
-<!-- <h4><span style="color: #734199"> INSTRUCCIONES</span></h4>
-  <ol>
-    <span style="text-align: start">
-      <li>
-        Ingresa el numero del telefono de tu amiga con el prefijo del
-        pais
-      </li>
-      <p>
-        (si no lo sabes el boton prefijos te direcciona a una pagina
-        donde lo puedes consultar)
-      </p>
-      <li>
-        Ingresa la clave, esta corresponde a la cantidad de
-        desplazamientos en el alfabeto que te permitiran cifrar o
-        descifrar el mensaje
-      </li>
-      <p>
-        <b> <i>RECUERDA! </i> </b> para descifrar el mensaje debes saber
-        con que clave se encripto)
-      </p>
-      <li>Ingresa el mensaje</li>
-      <li>Selecciona la opcion que deseas</li>
-    </span>
-  </ol>
-</div> -->
-
