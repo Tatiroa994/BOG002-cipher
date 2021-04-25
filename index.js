@@ -1,83 +1,99 @@
 import cipher from "./cipher.js";
+import { countries } from "./data_prefix.js";
+import { NotificacionToast } from "./notification_toast.js";
+import { instructions } from "./instructions_cyper.js";
 
-let mensaje = document.getElementById("mensaje");
-let offset = document.getElementById("offset");
-let botonDecode = document.getElementById("button_decode");
-let botonEncode = document.getElementById("button_encode");
-let mensajeGuardado = " ";
-let offsetGuardado;
-let modal_container = document.getElementById("modal_container");
-let cerrar = document.getElementById("cerrar");
-let modal = document.getElementById("modal");
-let enviarBoton = document.getElementById("enviar");
-let destino = document.getElementById("destino");
-let prefijo = document.getElementById("prefijo");
-let historial = document.getElementById("historial");
+customElements.define("notification-toast", NotificacionToast);
+const message = document.getElementById("message");
+const offset = document.getElementById("offset");
+const botonDecode = document.getElementById("button_decode");
+const botonEncode = document.getElementById("button_encode");
+const modalMontainer = document.getElementById("modal_container");
+const btnCloseModal = document.getElementById("close-modal");
+const modal = document.getElementById("modal");
+const targetCel = document.getElementById("destino");
+const containerBtnModal = document.querySelector(".btn-modal-whatsapp");
+const containerListCountry = document.getElementById("container-countries");
+const inputCountry = document.getElementById("input-country");
+const btnInfo = document.querySelector(".btn-info");
 
-/*mensaje.addEventListener("keyup", function () {
-  mensaje.value = mensaje.value.toUpperCase();
-  mensajeGuardado = mensaje.value;
-  //console.log(mensajeGuardado);
-});*/
-prefijo.addEventListener("click", prefijos);
-function prefijos() {
-  window.open("http://eldiamanteescarbon.com/Informacion/Info-Prefijos.htm");
-}
+const printToatsNotification = (messageDone) => {
+  const notification = document.getElementById("notification");
+  const toastErrorSpan = notification.shadowRoot.querySelector("span");
+  toastErrorSpan.textContent = messageDone;
+  notification.shadowRoot.querySelector("div").classList.add("show");
+};
 
-cerrar.addEventListener("click", close);
-function close() {
-  modal_container.classList.remove("show");
-}
+const listCountries = () => {
+  const dataListCountries = document.createElement("datalist");
+  dataListCountries.id = "countries";
+  for (let i = 0; i < countries.length; i++) {
+    const itemcountry = document.createElement("option");
+    itemcountry.value = countries[i].country;
+    dataListCountries.appendChild(itemcountry);
+  }
+  containerListCountry.appendChild(dataListCountries);
+};
 
-historial.addEventListener("click", function(){
-  modal_container.classList.add("show");
-  enviarBoton.style.display = "none";
-  modal.innerHTML = `<img src="imagen/construccion.png" class="imagen"><br>
-  <p>SITIO EN CONSTRUCCION!</p><br>`
-})
-// enviarBoton.addEventListener("click", function(){
-//   let celDestino = parseInt(destino.value);
-//   window.open("https://wa.me/" + celDestino + "?text=" + "");
-// });
+const sendWhatapp = () => {
+  containerBtnModal.innerHTML = "";
+  const btnWhatsapp = document.createElement("button");
+  btnWhatsapp.classList.add("btn-whatsapp");
+  containerBtnModal.appendChild(btnWhatsapp);
+  btnWhatsapp.addEventListener("click", function () {
+    window.open("https://wa.me/" + parseInt(targetCel.value) + "?text=" + "");
+  });
+};
+
+const showMessage = (title, message) => {
+  modalMontainer.classList.add("show");
+  modal.innerHTML = "";
+  const containerMessage = document.createElement("div");
+  const titleMessge = document.createElement("h1");
+  const contentMessage = document.createElement("div");
+  titleMessge.textContent = title;
+  contentMessage.innerHTML = message;
+  containerMessage.insertAdjacentElement("afterbegin", titleMessge);
+  containerMessage.insertAdjacentElement("beforeend", contentMessage);
+  modal.appendChild(containerMessage);
+};
+
+inputCountry.addEventListener("change", () => {
+  for (let i = 0; i < countries.length; i++) {
+    if (inputCountry.value === countries[i].country) {
+      targetCel.value = countries[i].prefix;
+    }
+  }
+});
 
 botonEncode.addEventListener("click", function () {
   //boton cifrar
-  modal_container.classList.add("show");
+  const title = "Tu mensaje cifrado es:";
   try {
-    mensajeGuardado = mensaje.value;
-    offsetGuardado = parseInt(offset.value);
-    let mensajeFinalGuardado = cipher.encode(offsetGuardado, mensajeGuardado);
-    modal.innerHTML = `<h3> TU MENSAJE CIFRADO ES:</h3><br> ${mensajeFinalGuardado}<br><br>`;
-    enviarBoton.style.display = "inline";
-    enviarBoton.addEventListener("click", function () {
-      let celDestino = parseInt(destino.value);
-      window.open(
-        "https://wa.me/" + celDestino + "?text=" + mensajeFinalGuardado
-      );
-    });
+    const messageEncode = cipher.encode(parseInt(offset.value), message.value);
+    showMessage(title, messageEncode);
+    sendWhatapp();
   } catch (error) {
-    modal.innerHTML = error.message;
-    enviarBoton.style.display = "none";
+    printToatsNotification(error.message);
+    modalMontainer.classList.remove("show");
   }
 });
 
 botonDecode.addEventListener("click", function () {
   // boton descifrar
-  modal_container.classList.add("show");
+  const title = "Tu mensaje descifrado es:";
+  
   try {
-    mensajeGuardado = mensaje.value;
-    offsetGuardado = parseInt(offset.value);
-    let mensajeFinalGuardado = cipher.decode(offsetGuardado, mensajeGuardado);
-    modal.innerHTML = `<h3> TU MENSAJE DESCIFRADO ES:</h3><br> ${mensajeFinalGuardado}<br><br>`;
-    enviarBoton.style.display = "inline";
-    enviarBoton.addEventListener("click", function () {
-      let celDestino = parseInt(destino.value);
-      window.open(
-        "https://wa.me/" + celDestino + "?text=" + mensajeFinalGuardado
-      );
-    });
+    const messageDecode = cipher.encode(parseInt(offset.value), message.value);
+    showMessage(title, messageDecode);
+    sendWhatapp();
   } catch (error) {
-    modal.innerHTML = error.message;
-    enviarBoton.style.display = "none";
+    printToatsNotification(error.message);
+    modalMontainer.classList.remove("show");
   }
 });
+
+btnInfo.addEventListener("click", () => showMessage("Bienvenidos....", instructions));
+btnCloseModal.addEventListener("click", () => modalMontainer.classList.remove("show"));
+
+listCountries();
