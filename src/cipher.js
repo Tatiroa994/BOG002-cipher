@@ -4,13 +4,13 @@ const cipher = {
     let newAscci;
     let newMessage = "";
     if (!offset && !message) {
-      throw new TypeError("INGRESE CLAVE Y MENSAJE");
+      throw new TypeError("Ingrese clave y mensaje");
     }
     if (!offset) {
-      throw new TypeError("INGRESE CLAVE");
+      throw new TypeError("Ingrese clave");
     }
     if (!message) {
-      throw new TypeError("INGRESE MENSAJE");
+      throw new TypeError("Ingrese mensaje");
     } else {
       for (let i = 0; i < message.length; i++) {
         let menssageAscci = message.charCodeAt(i);
@@ -36,13 +36,13 @@ const cipher = {
     let newAscci;
     let newMessage = "";
     if (!offset && !message) {
-      throw new TypeError("INGRESE CLAVE Y MENSAJE");
+      throw new TypeError("Ingrese clave y mensaje");
     }
     if (!offset) {
-      throw new TypeError("INGRESE CLAVE");
+      throw new TypeError("Ingrese clave");
     }
     if (!message) {
-      throw new TypeError("INGRESE MENSAJE");
+      throw new TypeError("Ingrese mensaje");
     } else {
       for (let i = 0; i < message.length; i++) {
         let menssageAscci = message.charCodeAt(i);

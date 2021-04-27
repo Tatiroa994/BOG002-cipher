@@ -15,9 +15,6 @@
 
 body {
   margin: 0;
-  min-height: 100vh;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
   background-color: var(--colorbody);
 }
 
@@ -33,7 +30,7 @@ body {
 
 header.header-principal h1 {
   font-family: var(--fontTitle);
-  font-size: 2.2rem;
+  font-size: 2rem;
   margin: 0;
 }
 
@@ -50,7 +47,7 @@ header.header-principal img {
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 1rem 1rem 0 1rem;
+  padding: 0 1rem;
 }
 
 .principal-section {
@@ -61,7 +58,7 @@ header.header-principal img {
 
 section.principal-section h1 {
   font-family: var(--fontTitle);
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin: 0;
   padding: 1rem;
 }
@@ -69,7 +66,7 @@ section.principal-section h1 {
 section.principal-section p {
   font-family: var(--fontBody);
   font-size: 1rem;
-  width: 90%;
+  width: 80%;
   text-align: center;
   margin: 0 0 1rem 0;
 }
@@ -77,31 +74,59 @@ section.principal-section p {
 label {
   text-align: start;
   font-family: var(--fontTitle);
-  font-size: 1.5rem;
-  width: 90%;
+  font-size: 1.2rem;
+  width: 80%;
   max-width: 357px;
-  
+
 }
 
 input,
 textarea {
-  width: 90%;
+  width: 80%;
   max-width: 357px;
   margin-bottom: 1rem;
   border-radius: 0.4rem;
   font-family: var(--fontBody);
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   padding-left: 0.5rem;
   border: 1px solid #c4c4c4;
 }
 
-textarea {
-  max-height: 150px;
+.shake{
+  animation: shake 0.82s cubic-bezier(.36, .07, .19, .97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  border: red solid 2px;
+}
+
+@keyframes shake {
+
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
 }
 
 #container-countries {
   display: flex;
-  width: 90%;
+  width: 80%;
   max-width: 357px;
   justify-content: space-between;
 }
@@ -117,7 +142,7 @@ div#container-countries input:first-child {
 .container-btn {
   display: flex;
   justify-content: space-between;
-  width: 90%;
+  width: 80%;
   max-width: 357px;
   padding: 1rem 0;
 }
@@ -126,7 +151,7 @@ div.container-btn button {
   background-color: var(--btn);
   color: #fff;
   padding: 0.5rem;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-family: var(--fontTitle);
   border-radius: 10%;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -138,19 +163,22 @@ div.container-btn button:hover {
 }
 
 .container-btn-info-reset {
-  width: 100%;
-  background-color: var(--purple1);
-  width: 100%;
+  background-color: rgba(28 20 39 / 0.77);
+  position: fixed;
+  bottom: 10rem;
+  right: 0;
   display: flex;
-  justify-content: space-between;
-  padding: 0.5rem;
+  flex-direction: column;
+  padding: 0.5rem 0 0 0.5rem;
+  border-radius: 5px;
 }
 
-footer.container-btn-info-reset button {
+div.container-btn-info-reset button {
   position: relative;
-  width: 3rem;
+  width: 2.5rem;
   height: 2.5rem;
-  padding: 0.3rem;
+  padding: 0.2rem;
+  margin-bottom: 0.5rem;
   background-color: var(--btn);
   border-radius: 10%;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -158,7 +186,7 @@ footer.container-btn-info-reset button {
   background-color: var(--btn);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 34px;
+  background-size: 30px;
 }
 
 .btn-info {
@@ -176,6 +204,7 @@ footer.container-btn-info-reset button {
   background-color: var(--colorheader);
   content: "Informacion";
   top: 0;
+  right: 31px;
   border-radius: 3px;
   opacity: 0.6;
 }
@@ -259,9 +288,10 @@ div.container-btn-modal button {
   background-image: url("./img/btn_close.svg");
 }
 
-.list-instructions{
+.list-instructions {
   text-align: left;
 }
+
 @media screen and (min-width: 800px) {
   .main-container {
     grid-template-columns: repeat(2, 1fr);
