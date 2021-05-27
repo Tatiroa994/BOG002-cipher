@@ -102,7 +102,7 @@ botonDecode.addEventListener("click", function () {
   // boton descifrar
   const title = "Tu mensaje descifrado es:";
   try {
-    const messageDecode = cipher.encode(parseInt(offset.value), message.value);
+    const messageDecode = cipher.decode(parseInt(offset.value), message.value);
     showMessage(title, messageDecode);
     sendWhatapp(messageDecode);
   } catch (error) {
