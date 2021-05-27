@@ -60,25 +60,22 @@ const showMessage = (title, message) => {
   modal.appendChild(containerMessage);
 };
 
-const paintInputError = (error) => {
+const paintInputError = () => {
   modalMontainer.classList.remove("show");
-  // message.classList.remove("shake");
-  // offset.classList.remove("shake");
-  switch (error) {
-    case "Ingrese clave y mensaje":
-      message.classList.add("shake");
-      offset.classList.add("shake");
-      break;
-    case "Ingrese clave":
-      offset.classList.add("shake");
-      break;
-    case "Ingrese mensaje":
-      message.classList.add("shake");
-      break;
-    default:
-      break;
+  if (!offset.value && !message.value) {
+    message.classList.add("shake");
+    offset.classList.add("shake");
+  }
+  if (!offset.value) {
+    offset.classList.add("shake");
+  }
+  if (!message.value) {
+    message.classList.add("shake");
   }
 };
+
+message.addEventListener("change", () => message.classList.remove("shake"));
+offset.addEventListener("change", () => offset.classList.remove("shake"));
 
 inputCountry.addEventListener("change", () => {
   for (let i = 0; i < countries.length; i++) {
@@ -89,7 +86,7 @@ inputCountry.addEventListener("change", () => {
 });
 
 botonEncode.addEventListener("click", function () {
-    //boton cifrar
+  //boton cifrar
   const title = "Tu mensaje cifrado es:";
   try {
     const messageEncode = cipher.encode(parseInt(offset.value), message.value);
@@ -97,7 +94,6 @@ botonEncode.addEventListener("click", function () {
     sendWhatapp(messageEncode);
   } catch (error) {
     printToatsNotification(error.message);
-    // modalMontainer.classList.remove("show");
     paintInputError(error.message);
   }
 });
@@ -106,13 +102,12 @@ botonDecode.addEventListener("click", function () {
   // boton descifrar
   const title = "Tu mensaje descifrado es:";
   try {
-    const messageDecode = cipher.encode(parseInt(offset.value), message.value);
+    const messageDecode = cipher.decode(parseInt(offset.value), message.value);
     showMessage(title, messageDecode);
     sendWhatapp(messageDecode);
   } catch (error) {
     printToatsNotification(error.message);
-    // modalMontainer.classList.remove("show");
-    paintInputError(error.message);
+    paintInputError();
   }
 });
 
