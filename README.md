@@ -1,4 +1,4 @@
-# **_SECRETOS DE AMIGAS_**
+# **_SECRETOS_**
 
 ## ¿Quiénes son los principales usuarios de producto?
 
@@ -12,31 +12,12 @@ Encriptar mensajes atraves de la app que estamos creando para enviarlos por sus 
 
 Por que se esta facilitando la comunicacion entre mujeres en un lenguaje cifrado que solo ellas entenderan
 
-## Vistas, desktop - mobile
+## *Prototipo de alta fidelidad desktop y responsibe mobile*
 <img src="src/img/view.svg" width="500px"    height="300px">
 
-## Vistas, desktop - mobile
-Deplegue gh-pages
+[DEMO](https://tatiroa994.github.io/BOG002-cipher/)
 
-https://tatiroa994.github.io/BOG002-cipher/
-***************************************
-# Retro spint 1
-
-## ¿Qué funcionó en el sprint?
-
-La planeacion, hacer el trabajo en conjunto y no dividirnos tareas, trabajar en mini tareas avanzando un paso a la vez, sin adelantarnos, nos permitio enfoncarnos en la investicacion de cada tema.
-
-## ¿Qué se puede hacer diferente?
-
-dedicrle mas tiempo en la tarde en conjunto
-
-## ¿Por qué no se cubrieron algunos?
-
-se cumplieron los obejetivos propuestos para esta semana.
-
-## ¿Qué funcionó para completar los que se completaron?
-
-trabajar en mini tareas y enforcarnos solo en ellas, solicitar las ayudantias pára lograr desbloquearnos
+*********
 
 # Objetivos de aprendizaje
 
@@ -86,32 +67,4 @@ como tecnologías.
 - [x] Crear prototipos para obtener feedback e iterar.
 - [x] Aplicar los principios de diseño visual (contraste, alineación, jerarquía)
 
-# Checklist
 
-### Parte Obligatoria
-
-- [x] `README.md` incluye info sobre proceso y decisiones de diseño.
-- [x] `README.md` explica claramente quiénes son los usuarios y su relación con
-      el producto.
-- [x] `README.md` explica claramente cómo el producto soluciona los
-      problemas/necesidades de los usuarios.
-- [x] Usa VanillaJS.
-- [x] No utiliza `this`.
-- [x] Implementa `cipher.encode`.
-- [x] Implementa `cipher.decode`.
-- [x] Pasa linter con configuración provista.
-- [x] Pasa pruebas unitarias.
-- [x] Pruebas unitarias cubren 70% de _statements_, _functions_ y _lines_, y un
-      mínimo del 50% de _branches_.
-- [x] Interfaz permite elegir el `offset` o _desplazamiento_ a usar en el
-      cifrado/descifrado.
-- [x] Interfaz permite escribir un texto para ser cifrado.
-- [x] Interfaz muestra el resultado del cifrado correctamente.
-- [x] Interfaz permite escribir un texto para ser descifrado.
-- [x] Interfaz muestra el resultado del descifrado correctamente.
-
-### Parte Opcional: "Hacker edition"
-
-- [x] Cifra/descifra minúsculas
-- [ ] Cifra/descifra _otros_ caracteres (espacios, puntuación, `ñ`, `á`, ...)
-- [x] Permite usar un `offset` negativo.
